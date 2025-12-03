@@ -14,6 +14,7 @@ struct device_info device_info_am69 = {
         app_seva_store,
         app_chromium_browser,
         app_settings,
+        app_terminal,
     },
     .include_powerbuttons = {
         action_shutdown,

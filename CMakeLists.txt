@@ -47,7 +47,14 @@ target_link_libraries(ti-apps-launcher PRIVATE
     Qt::Multimedia
     Qt::Quick
     PkgConfig::gstreamer
+    # qmltermwidget
 )
+
+# TODO: Add a Qt6-compatible version of qmltermwidget with a CMake build system
+# to the 3rdparty/qmltermwidget directory.
+# Then, uncomment the following line:
+# add_subdirectory(3rdparty/qmltermwidget)
+# And uncomment the qmltermwidget line in target_link_libraries above.
 
 install(TARGETS ti-apps-launcher
     BUNDLE DESTINATION .
