@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QMLTermWidget 1.0
-import QtQuick.Controls 2.1
+import QtQuick
+import QMLTermWidget 2.0
+import QtQuick.Controls
 
 Rectangle {
     anchors.fill: parent
@@ -47,7 +47,10 @@ Rectangle {
         }
         onTerminalUsesMouseChanged: console.log(terminalUsesMouse);
         onTerminalSizeChanged: console.log(terminalSize);
-        Component.onCompleted: mainsession.startShellProgram();
+        Component.onCompleted: {
+            mainsession.startShellProgram();
+            terminal.forceActiveFocus();
+        }
 
         QMLTermScrollbar {
             terminal: terminal
@@ -70,5 +73,4 @@ Rectangle {
         visible: false
         onClicked: mainsession.search("version");
     }
-    Component.onCompleted: terminal.forceActiveFocus();
 }
